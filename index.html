@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Shaping of a Hero: José Rizal's Character Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Crimson+Pro:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5EDD8;
+    --parchment: #EDE0C4;
+    --sepia: #C4A882;
+    --gold: #B8933E;
+    --dark-gold: #8B6914;
+    --burgundy: #6B1D2B;
+    --deep-red: #4A1219;
+    --ink: #1C1008;
+    --ink-light: #3D2B1A;
+    --brown-mid: #7A5C3A;
+    --green-heritage: #2D4A2D;
+    --text-muted: #6B5740;
+    --bg-section: #FAF4E8;
+    --border: rgba(139, 105, 20, 0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background-color: var(--bg-section);
+    color: var(--ink-light);
+    line-height: 1.8;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--deep-red);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(196,168,130,0.08) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(196,168,130,0.08) 40px);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(20,8,4,0.6) 100%);
+    pointer-events: none;
+  }
+  .hero-ornament {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s ease both;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--cream);
+    position: relative; z-index: 1;
+    max-width: 900px;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--parchment);
+    opacity: 0.85;
+    margin-top: 1.5rem;
+    max-width: 600px;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  .hero-dates {
+    margin-top: 2.5rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: var(--sepia);
+    position: relative; z-index: 1;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sepia);
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeUp 1s 1s ease both;
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: pulse-line 2s infinite;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--deep-red);
+    border-bottom: 1px solid rgba(196,168,130,0.3);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--gold);
+    white-space: nowrap;
+    padding: 1rem 0;
+  }
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    display: block;
+    padding: 1rem 0.8rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 1rem 0; }
+  .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--parchment); margin: 5px 0; transition: 0.3s; }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+  .wide-container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 6rem 0; }
+  section:nth-child(even) { background: var(--cream); }
+  section:nth-child(odd) { background: var(--bg-section); }
+
+  .section-label {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--deep-red);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  .section-title em { font-style: italic; color: var(--burgundy); }
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--sepia));
+    margin: 0 0 2.5rem;
+  }
+  p { margin-bottom: 1.2rem; color: var(--ink-light); }
+  p:last-child { margin-bottom: 0; }
+
+  /* ─── INTRO QUOTE ─── */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    background: rgba(184,147,62,0.07);
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--burgundy);
+    line-height: 1.7;
+  }
+  .pull-quote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  /* ─── TIMELINE ─── */
+  #timeline { background: var(--deep-red) !important; }
+  .timeline-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .timeline-intro .section-label { color: var(--gold); }
+  .timeline-intro .section-title { color: var(--cream); }
+  .timeline-intro p { color: var(--parchment); opacity: 0.85; }
+  .timeline-intro .divider { margin: 0 auto 2.5rem; }
+
+  .timeline-filter {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  .tfilter-btn {
+    padding: 0.4rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(196,168,130,0.4);
+    background: transparent;
+    color: var(--parchment);
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .tfilter-btn:hover, .tfilter-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--deep-red);
+    font-weight: 500;
+  }
+
+  .timeline-track {
+    position: relative;
+    padding-left: 3rem;
+  }
+  .timeline-track::before {
+    content: '';
+    position: absolute;
+    left: 11px; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), rgba(196,168,130,0.2));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .timeline-item.hidden { display: none; }
+  .timeline-dot {
+    position: absolute;
+    left: -2.65rem;
+    top: 0.9rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--deep-red);
+    transition: background 0.3s;
+  }
+  .timeline-item:hover .timeline-dot { background: var(--gold); }
+  .timeline-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(196,168,130,0.2);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .timeline-card:hover { background: rgba(196,168,130,0.12); border-color: rgba(196,168,130,0.4); }
+  .timeline-year {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .timeline-event {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--parchment);
+    opacity: 0.8;
+    line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s;
+  }
+  .timeline-desc.expanded { max-height: 300px; opacity: 1; margin-top: 0.5rem; }
+  .tcat-badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .cat-birth { background: rgba(107,29,43,0.5); color: #FFBFCB; }
+  .cat-education { background: rgba(45,74,45,0.5); color: #B8E6B8; }
+  .cat-travel { background: rgba(28,64,120,0.5); color: #B0CFFF; }
+  .cat-writing { background: rgba(130,90,20,0.5); color: #FFD98A; }
+  .cat-exile { background: rgba(80,20,80,0.5); color: #E0B0FF; }
+  .cat-execution { background: rgba(60,10,10,0.6); color: #FFB0B0; }
+
+  /* ─── INFO CARDS ─── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .info-card {
+    background: rgba(184,147,62,0.08);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    border-radius: 2px;
+    padding: 1.75rem 1.5rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .info-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+  .info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--burgundy);
+    margin-bottom: 0.8rem;
+  }
+  .info-card p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
+
+  /* ─── TRAITS ─── */
+  .traits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .trait-pill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: rgba(255,255,255,0.5);
+  }
+  .trait-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .trait-pill h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--burgundy); margin-bottom: 0.25rem; }
+  .trait-pill p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+  /* ─── TWO COL ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  @media(max-width: 680px) { .two-col { grid-template-columns: 1fr; gap: 2rem; } }
+
+  /* ─── STRENGTHS/WEAKNESS ─── */
+  .virtue-list, .weakness-list { list-style: none; margin: 1.5rem 0; }
+  .virtue-list li, .weakness-list li {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+    color: var(--ink-light);
+  }
+  .virtue-list li::before { content: '✦'; color: var(--gold); flex-shrink: 0; margin-top: 0.1rem; }
+  .weakness-list li::before { content: '◈'; color: var(--burgundy); flex-shrink: 0; margin-top: 0.1rem; }
+
+  /* ─── TIMELINE PHASE ─── */
+  .phase-block {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .phase-year-badge {
+    flex-shrink: 0;
+    width: 70px;
+    text-align: center;
+    padding: 0.4rem;
+    background: var(--burgundy);
+    color: var(--gold);
+    font-family: 'Crimson Pro', serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+    margin-top: 0.25rem;
+  }
+  .phase-content h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--burgundy); margin-bottom: 0.4rem; }
+  .phase-content p { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+
+  /* ─── STAT CARDS ─── */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+  .stat-box {
+    background: var(--bg-section);
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+  .stat-box strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-box span { font-family: 'Crimson Pro', serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+
+  /* ─── CONCLUSION BANNER ─── */
+  .conclusion-banner {
+    background: var(--deep-red);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  .conclusion-banner .section-label { color: var(--gold); }
+  .conclusion-banner .section-title { color: var(--cream); }
+  .conclusion-banner p { color: #EDE0C4; opacity: 1; max-width: 680px; margin: 0 auto 1.2rem; font-size: 1rem; }
+  .conclusion-banner .divider { margin: 0 auto 2.5rem; }
+
+  /* ─── REFERENCES ─── */
+  .references-section { background: var(--ink) !important; padding: 4rem 0; }
+  .references-section .section-label, .references-section .section-title { color: var(--gold); }
+  .references-section p { color: var(--parchment); opacity: 0.75; }
+  .ref-list { list-style: none; margin-top: 1.5rem; }
+  .ref-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(196,168,130,0.15);
+    font-size: 0.9rem;
+    color: rgba(237,224,196,0.7);
+    font-family: 'Crimson Pro', serif;
+    line-height: 1.6;
+  }
+  .ref-list li:last-child { border-bottom: none; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(196,168,130,0.2);
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    color: rgba(237,224,196,0.4);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-line {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; width: 100%; }
+    .nav-links.open { display: flex; flex-direction: column; padding-bottom: 1rem; }
+    .nav-links a { padding: 0.6rem 0; }
+    .nav-toggle { display: block; }
+    .hero h1 { font-size: 2.2rem; }
+    .timeline-track { padding-left: 2rem; }
+    section { padding: 4rem 0; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="hero-ornament">Rizal: Life &amp; Legacy</span>
+  <h1>The Shaping of a Hero:<br/><em>José Rizal's Character Development</em></h1>
+  <p class="hero-sub">An interactive and comprehensive digital timeline of the Philippines' national hero — his life, travels, virtues, and enduring legacy.</p>
+  <div class="hero-dates">June 19, 1861 &mdash; December 30, 1896</div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    Scroll to explore
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <span class="nav-brand">José Rizal &mdash; Character Study</span>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#biological">Biological</a></li>
+    <li><a href="#environmental">Environmental</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#experiences">Experiences</a></li>
+    <li><a href="#character">Character</a></li>
+    <li><a href="#heroism">Heroism</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+<!-- I. INTRODUCTION -->
+<section id="introduction">
+  <div class="container">
+    <span class="section-label reveal">I &mdash; Introduction</span>
+    <h2 class="section-title reveal">Who Was <em>José Rizal?</em></h2>
+    <div class="divider reveal"></div>
+
+    <div class="stat-strip reveal">
+      <div class="stat-box"><strong>11</strong><span>Languages Spoken</span></div>
+      <div class="stat-box"><strong>2</strong><span>Great Novels</span></div>
+      <div class="stat-box"><strong>4</strong><span>Continents Visited</span></div>
+      <div class="stat-box"><strong>35</strong><span>Age at Execution</span></div>
+    </div>
+
+    <p class="reveal">José Protasio Rizal Mercado y Alonso Realonda — born on June 19, 1861 in Calamba, Laguna — was a Filipino polymath whose brilliance as a physician, novelist, poet, sculptor, and political thinker made him the foremost symbol of Philippine nationalism. In a colonial era defined by Spanish dominance, Rizal dared to hold a mirror to society through his pen, and in doing so, awakened the consciousness of an entire nation.</p>
+
+    <p class="reveal">He is celebrated not merely as a martyr who died for his people, but as a living embodiment of the Renaissance ideal: a man of intellect, sensitivity, and moral courage who believed that education and reform — not violence — were the true paths to liberation.</p>
+
+    <div class="pull-quote reveal">
+      <p>"He who does not know how to look back at where he came from will never get to his destination."</p>
+      <cite>— José Rizal</cite>
+    </div>
+
+    <p class="reveal">This study examines the complex interplay of <strong>biological inheritance</strong> and <strong>environmental forces</strong> that shaped Rizal's extraordinary character. His genetic gifts, the nurturing warmth of his family, the crucible of colonial oppression, and his far-ranging experiences across Europe and Asia all converged to forge a hero whose legacy endures more than a century after his death. Through analyzing these formative dimensions, we arrive at a fuller understanding of how an individual's strengths and weaknesses — gifts and flaws alike — can be transformed into the substance of true heroism.</p>
+  </div>
+</section>
+
+<!-- II. BIOLOGICAL FACTORS -->
+<section id="biological">
+  <div class="container">
+    <span class="section-label reveal">II &mdash; Biological Factors</span>
+    <h2 class="section-title reveal">Inherited Traits &amp; <em>Physical Character</em></h2>
+    <div class="divider reveal"></div>
+
+    <p class="reveal">Rizal's genetic heritage was a rich tapestry woven from Filipino, Chinese, Spanish, and possibly Japanese ancestry. His family name "Rizal" (from <em>ricial</em>, meaning green meadows) was adopted under Spanish colonial mandate, yet the blood within him carried centuries of diverse Asian and European lineage. This multicultural inheritance, scholars argue, contributed to his exceptional intellectual range and his capacity to bridge cultural worlds.</p>
+
+    <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--burgundy);margin:2rem 0 1rem;font-weight:600;">Inherited Intellectual Gifts</h3>
+
+    <div class="traits-grid reveal">
+      <div class="trait-pill">
+        <div class="trait-icon">🧠</div>
+        <div>
+          <h4>Photographic Memory</h4>
+          <p>Rizal could memorize texts and languages with remarkable speed, a trait evident from earliest childhood.</p>
+        </div>
+      </div>
+      <div class="trait-pill">
+        <div class="trait-icon">✍️</div>
+        <div>
+          <h4>Artistic Aptitude</h4>
+          <p>Inherited creative sensibility manifested in writing, sculpture, painting, and music — all mastered to high levels.</p>
+        </div>
+      </div>
+      <div class="trait-pill">
+        <div class="trait-icon">🔬</div>
+        <div>
+          <h4>Analytical Mind</h4>
+          <p>Scientific reasoning and logical precision, qualities that served him in medicine and socio-political analysis alike.</p>
+        </div>
+      </div>
+      <div class="trait-pill">
+        <div class="trait-icon">💡</div>
+        <div>
+          <h4>Sensitivity &amp; Empathy</h4>
+          <p>A deep emotional attunement to suffering, likely inherited from his compassionate mother, Doña Teodora.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--burgundy);margin:2rem 0 1rem;font-weight:600;">Physical Characteristics &amp; Their Impact</h3>
+
+    <p class="reveal">Rizal stood approximately 5 feet 2 inches tall — slight by European standards — yet he carried himself with commanding dignity. His small stature in colonized Manila meant he was often underestimated by Spanish authorities, a perception he strategically exploited. His nearsightedness, which led him to specialize in ophthalmology, gave him an ironic kinship with his people: a doctor who treated blindness who was himself not fully sighted, dedicated to giving sight to a nation blinded by colonialism.</p>
+
+    <p class="reveal">His mixed ancestry gave him a complexion and physiognomy that allowed him to move through both Filipino and European social circles — a physical ambiguity that, combined with his mastery of languages, made him an effective cultural diplomat and advocate abroad.</p>
+
+    <div class="pull-quote reveal">
+      <p>"The youth is the hope of our fatherland." Rizal's biological gifts were not private blessings but national assets — talents placed in service of a people's liberation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- III. ENVIRONMENTAL FACTORS -->
+<section id="environmental">
+  <div class="container">
+    <span class="section-label reveal">III &mdash; Environmental Factors</span>
+    <h2 class="section-title reveal">Family, Education &amp; <em>Colonial Society</em></h2>
+    <div class="divider reveal"></div>
+
+    <div class="two-col">
+      <div>
+        <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--burgundy);margin-bottom:1rem;font-weight:600;">A. Family Background &amp; Upbringing</h3>
+        <p class="reveal">Rizal was born seventh of eleven children to Francisco Mercado Rizal and Teodora Alonso Realonda, a family of comfortable <em>ilustrado</em> (educated native elite) standing. His father Francisco was an industrious farmer and tenant of the Dominican-owned hacienda; his mother Teodora was a highly educated woman who spoke Spanish and had deep literary sensibilities — she was famously the first to teach Rizal the alphabet and instill in him a love of poetry and justice.</p>
+        <p class="reveal">Growing up in Calamba, Rizal was immersed in the beauty of the Philippine landscape and the injustice of colonial land tenancy. The hacienda system surrounding his family's home gave him a visceral, firsthand understanding of how the Spanish friar orders economically oppressed Filipino farmers — a grievance that would animate his most famous novels.</p>
+        <p class="reveal">Particularly formative was the unjust imprisonment of his mother Teodora, accused on false charges by a mestizo lieutenant. Witnessing this injustice as a child imprinted on Rizal a lifelong hatred of arbitrary authority and a fierce commitment to justice for the vulnerable.</p>
+      </div>
+      <div>
+        <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--burgundy);margin-bottom:1rem;font-weight:600;">B. Educational Experiences</h3>
+        <p class="reveal">Rizal's formal education began under private tutors in Calamba, then continued at the Ateneo Municipal de Manila — then one of the finest institutions in the archipelago, run by the Jesuits — where he earned top honors. He went on to the Universidad de Santo Tomás for medicine, though he found the Dominicans' teaching outdated and discriminatory toward native students.</p>
+        <div class="cards-grid reveal" style="grid-template-columns:1fr;">
+          <div class="info-card">
+            <h3>Ateneo de Manila</h3>
+            <p>Under Jesuit instruction, Rizal excelled in literature, science, and philosophy. He graduated in 1877 as Bachelor of Arts with highest honors, winning medals in poetry and other disciplines.</p>
+          </div>
+          <div class="info-card">
+            <h3>Universidad Central de Madrid</h3>
+            <p>In Spain, Rizal completed his licentiate in medicine (1884) and philosophy and letters (1885), gaining access to Europe's enlightened political discourse and reform movements.</p>
+          </div>
+          <div class="info-card">
+            <h3>University of Heidelberg</h3>
+            <p>In Germany, Rizal studied ophthalmology under renowned Professor Otto Becker, sharpening his medical expertise while also writing much of <em>El Filibusterismo</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--burgundy);margin:3rem 0 1rem;font-weight:600;">C. Social &amp; Political Context of the Philippines</h3>
+    <p class="reveal">The Philippines of Rizal's era was a society stratified by race, class, and religion. Spanish friars wielded enormous power — controlling education, local government, and vast agricultural lands. Filipinos were legally classified as <em>indios</em> and denied access to most professional and clerical positions regardless of merit. The Propaganda Movement, of which Rizal became the most prominent voice, sought not independence but reforms: equality before the law, Philippine representation in the Spanish Cortes, freedom of the press, and secularization of the parishes.</p>
+    <p class="reveal">This context of enlightened reform — rather than armed revolution — shaped Rizal's political philosophy. He believed deeply in the pen over the sword, in education and consciousness-raising as the true foundation of national progress. Yet it was precisely this moderation that ultimately frustrated both colonial authorities and militant nationalists, placing Rizal in a tragically isolated position.</p>
+  </div>
+</section>
+
+<!-- INTERACTIVE TIMELINE -->
+<section id="timeline">
+  <div class="wide-container">
+    <div class="timeline-intro">
+      <span class="section-label">IV &mdash; Comprehensive Timeline</span>
+      <h2 class="section-title">Life's Key <em>Events</em></h2>
+      <div class="divider"></div>
+      <p>Click any event to expand details. Filter by category below.</p>
+    </div>
+
+    <div class="timeline-filter">
+      <button class="tfilter-btn active" data-filter="all">All Events</button>
+      <button class="tfilter-btn" data-filter="birth">Early Life</button>
+      <button class="tfilter-btn" data-filter="education">Education</button>
+      <button class="tfilter-btn" data-filter="travel">Travels</button>
+      <button class="tfilter-btn" data-filter="writing">Works &amp; Writing</button>
+      <button class="tfilter-btn" data-filter="exile">Exile</button>
+      <button class="tfilter-btn" data-filter="execution">Trial &amp; Execution</button>
+    </div>
+
+    <div class="timeline-track" id="timelineTrack">
+
+      <div class="timeline-item" data-cat="birth">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-birth">Early Life</span>
+          <div class="timeline-year">June 19, 1861</div>
+          <div class="timeline-event">Birth in Calamba, Laguna</div>
+          <div class="timeline-desc">José Protasio Rizal Mercado y Alonso Realonda is born to Francisco Mercado Rizal and Teodora Alonso Realonda in Calamba, Laguna. He is the seventh of eleven children. His parents are part of the ilustrado class, giving him access to education and cultural enrichment from birth.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="birth">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-birth">Early Life</span>
+          <div class="timeline-year">1868 &mdash; Age 7</div>
+          <div class="timeline-event">First Poem &amp; Mother's Imprisonment</div>
+          <div class="timeline-desc">Rizal composes his first poem in the Tagalog language at the age of 8. Around this period, his mother Teodora was unjustly imprisoned for allegedly conspiring to poison the wife of a governor — a false charge. Rizal later said this injustice deeply shaped his resolve to fight for the rights of his people.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="education">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-education">Education</span>
+          <div class="timeline-year">1872 &mdash; Age 11</div>
+          <div class="timeline-event">Enters Ateneo de Manila</div>
+          <div class="timeline-desc">Rizal enrolls at the Ateneo Municipal de Manila under the Jesuit order. Under the pen name "Laong Laan," he writes poems and participates in theatrical productions. He consistently earns top academic marks, winning multiple medals and prizes. This Jesuit education shaped his humanistic worldview and love of learning.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="writing">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-writing">Works</span>
+          <div class="timeline-year">1875 &mdash; Age 14</div>
+          <div class="timeline-event">Wins Poetry Prize at Ateneo</div>
+          <div class="timeline-desc">Rizal's poem "A la Juventud Filipina" (To the Filipino Youth) wins first prize in a literary contest organized by the Manila Lyceum of Art and Literature. Written at age 14, this work calls on Filipino youth to rise as hope for the nation — a theme he would return to throughout his life.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="education">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-education">Education</span>
+          <div class="timeline-year">1877 &mdash; Age 16</div>
+          <div class="timeline-event">Bachelor of Arts with Highest Honors</div>
+          <div class="timeline-desc">Rizal graduates from Ateneo with a Bachelor of Arts degree, receiving the highest honor possible. He then enrols at the Universidad de Santo Tomás to study medicine, motivated in part by his mother's failing eyesight — he hoped to cure her. He simultaneously studied at the Ateneo for a land surveyor's certificate.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="travel">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-travel">Travel</span>
+          <div class="timeline-year">1882 &mdash; Age 21</div>
+          <div class="timeline-event">Secret Departure to Spain</div>
+          <div class="timeline-desc">Without his father's full knowledge or blessing, Rizal secretly sails to Spain to continue his medical studies. He enrolls at the Universidad Central de Madrid. His departure marks the beginning of his years in Europe, during which he would study, write, and organize the Propaganda Movement advocating for Philippine reforms under Spanish rule.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="education">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-education">Education</span>
+          <div class="timeline-year">1884 &mdash; Age 23</div>
+          <div class="timeline-event">Licentiate in Medicine, Madrid</div>
+          <div class="timeline-desc">Rizal earns his Licentiate in Medicine at the Universidad Central de Madrid. The following year (1885), he obtains a second degree: Licentiate in Philosophy and Letters. His time in Madrid exposes him to liberal and republican political ideas, the Spanish press, and the wider reformist Filipino community in Europe.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="travel">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-travel">Travel</span>
+          <div class="timeline-year">1885–1887</div>
+          <div class="timeline-event">Paris, Germany &amp; Heidelberg</div>
+          <div class="timeline-desc">Rizal travels through Europe — Paris, Berlin, and Heidelberg. In Heidelberg, he studies ophthalmology under the renowned Dr. Otto Becker, gaining surgical expertise. In Berlin, he becomes active in scientific societies and publishes scholarly articles. He also completes his annotation of Antonio de Morga's historical account of the Philippines — a scholarly act of national reclamation.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="writing">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-writing">Works</span>
+          <div class="timeline-year">March 1887</div>
+          <div class="timeline-event">Publication of Noli Me Tángere</div>
+          <div class="timeline-desc">Rizal's first novel, Noli Me Tángere (Touch Me Not), is published in Berlin. Written in Spanish, the novel exposes the abuses of the Spanish colonial government and the friar orders through the story of Crisostomo Ibarra. It immediately becomes a sensation — and a scandal. The Spanish authorities and friars in the Philippines demand its suppression, and Rizal becomes a marked man.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="travel">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-travel">Travel</span>
+          <div class="timeline-year">1888</div>
+          <div class="timeline-event">Travels to London &amp; Annotates Morga</div>
+          <div class="timeline-desc">Rizal travels to London, where he spends months at the British Museum annotating Antonio de Morga's "Sucesos de las Islas Filipinas" (1609). His annotation challenges the Spanish colonial narrative by demonstrating that pre-colonial Filipino civilization was sophisticated and thriving before Spanish arrival — a powerful act of historical decolonization.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="writing">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-writing">Works</span>
+          <div class="timeline-year">September 1891</div>
+          <div class="timeline-event">Publication of El Filibusterismo</div>
+          <div class="timeline-desc">Rizal's second novel, El Filibusterismo (The Reign of Greed), is published in Ghent, Belgium. Dedicated to the martyrs of 1872 — GOMBURZA (Fathers Gómez, Burgos, and Zamora) — this darker sequel to Noli Me Tángere abandons hope for reform and suggests that revolution may be inevitable. The novel intensifies official hostility toward Rizal and deepens his reputation among the reformist intelligentsia.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="travel">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-travel">Travel</span>
+          <div class="timeline-year">1892</div>
+          <div class="timeline-event">Return to the Philippines &amp; La Liga Filipina</div>
+          <div class="timeline-desc">Rizal returns to Manila after years abroad. He founds La Liga Filipina — a civic organization promoting unity, mutual aid, and collective economic activity among Filipinos. Within days of its founding, Spanish authorities arrest Rizal and charge him with sedition. La Liga dissolves almost immediately, but its militant wing evolves into the Katipunan, the revolutionary society that would later launch the Philippine Revolution.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="exile">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-exile">Exile</span>
+          <div class="timeline-year">1892–1896</div>
+          <div class="timeline-event">Exile in Dapitan, Mindanao</div>
+          <div class="timeline-desc">Rizal is exiled to Dapitan, a remote town in Mindanao. Far from silencing him, the years in Dapitan reveal his deepest humanity. He practices medicine and restores the sight of many patients — including his own mother. He establishes a school, a water system, and a hospital for the poor. He conducts scientific research, corresponding with scientists in Europe. He cultivates a farm, teaches local youth, and falls in love with Irish-American Josephine Bracken. Dapitan becomes a microcosm of Rizal's vision for a reformed Philippines.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="exile">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-exile">Exile</span>
+          <div class="timeline-year">August 1896</div>
+          <div class="timeline-event">Departure Toward Cuba &amp; Arrest</div>
+          <div class="timeline-desc">Rizal, who had volunteered as a military doctor for Spain's campaign in Cuba, is permitted to leave Dapitan in July 1896. He boards a ship bound for Spain. But while at sea, the Katipunan revolt erupts in August 1896. The Spanish colonial government, despite Rizal's prior non-involvement with the Katipunan, arrests him aboard ship in Barcelona and sends him back to the Philippines as a prisoner.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="execution">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-execution">Trial</span>
+          <div class="timeline-year">December 1896</div>
+          <div class="timeline-event">Trial Before a Military Court</div>
+          <div class="timeline-desc">Rizal faces a military tribunal on charges of rebellion, sedition, and conspiracy — charges largely based on his novels and associations rather than any direct participation in the revolt. The trial is widely regarded by historians as a judicial farce: the verdict was predetermined, defense witnesses were dismissed, and no credible evidence of Rizal's personal involvement in the Katipunan revolt was presented. He is found guilty and sentenced to death.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-cat="execution">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleDesc(this)">
+          <span class="tcat-badge cat-execution">Execution</span>
+          <div class="timeline-year">December 30, 1896</div>
+          <div class="timeline-event">Execution at Bagumbayan</div>
+          <div class="timeline-desc">At dawn, José Rizal is executed by musket fire at Bagumbayan Field (now Luneta, or Rizal Park) in Manila. He is 35 years old. Before his death, he writes his final poem — "Mi Último Adiós" (My Last Farewell) — a serene and deeply moving elegy to his homeland, hidden in an oil lamp and delivered to his family. Rather than destroying the revolutionary movement, his death becomes its greatest catalyst: within two years, the Philippine Revolution achieves independence and the first Philippine Republic is established.</div>
+        </div>
+      </div>
+
+    </div><!-- end timeline-track -->
+  </div>
+</section>
+
+<!-- IV. LIFE EXPERIENCES (DETAIL) -->
+<section id="experiences">
+  <div class="container">
+    <span class="section-label reveal">IV &mdash; Life Experiences</span>
+    <h2 class="section-title reveal">Abroad, Dapitan &amp; <em>Final Days</em></h2>
+    <div class="divider reveal"></div>
+
+    <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--burgundy);margin-bottom:1.5rem;font-weight:600;">A. Experiences Abroad</h3>
+    <p class="reveal">Rizal's decade in Europe (1882–1892) was transformative. In Spain, France, Germany, Belgium, Austria, and England, he absorbed the Enlightenment ideals of liberty, equality, and national self-determination. He moved in the highest intellectual circles, befriending Ferdinand Blumentritt (an Austrian scholar who became his lifelong confidant), José María Panganiban, and other Filipino reformers. He wrote for <em>La Solidaridad</em>, the reformist Filipino newspaper in Spain, contributing incisive essays on colonial injustice.</p>
+    <p class="reveal">These years abroad equipped Rizal with an international perspective and a cosmopolitan network — making him uniquely capable of articulating Filipino aspirations in terms that European liberals could understand and support. Yet they also deepened a kind of cultural solitude: he became at home everywhere and belonging completely nowhere, his heart always pulled back toward a homeland he could no longer safely enter.</p>
+
+    <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--burgundy);margin:2.5rem 0 1.5rem;font-weight:600;">B. Life in Dapitan (1892–1896)</h3>
+    <p class="reveal">The four years in Dapitan represent, paradoxically, both Rizal's political imprisonment and his most fully realized human self. Stripped of the literary battlefield of Europe and cut off from the Manila reformist networks, Rizal turned to the daily work of healing, teaching, and community building.</p>
+
+    <div class="cards-grid reveal">
+      <div class="info-card">
+        <h3>Medical Practice</h3>
+        <p>Rizal treated patients from across Mindanao, performing delicate eye surgeries that restored sight to dozens, including his own mother Teodora, who visited Dapitan specifically for treatment.</p>
+      </div>
+      <div class="info-card">
+        <h3>Education &amp; Community</h3>
+        <p>He established a school teaching boys in Spanish, English, mathematics, and physical training. He designed an improved water system for the town and contributed to civic infrastructure at his own expense.</p>
+      </div>
+      <div class="info-card">
+        <h3>Scientific Research</h3>
+        <p>Rizal collected and classified previously unknown Philippine flora and fauna, corresponding with scientists in Europe. Several species were later named in his honor, including a bat, a frog, and multiple insects.</p>
+      </div>
+      <div class="info-card">
+        <h3>Josephine Bracken</h3>
+        <p>In 1895, Rizal fell deeply in love with Josephine Bracken, an Irish-American from Hong Kong. Their relationship was complex — the Church refused to marry them formally — yet she remained devoted to Rizal until his death, nursing him in his final hours.</p>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--burgundy);margin:2.5rem 0 1.5rem;font-weight:600;">C. Arrest, Trial &amp; Execution</h3>
+    <p class="reveal">When the Katipunan revolt erupted in August 1896 — a revolution Rizal had publicly opposed, urging patience and legal reform — the Spanish colonial authorities, eager to eliminate their most articulate critic, used the rebellion as pretext to arrest him. His letters and novels were presented as evidence of conspiracy; witnesses were coerced; and a military court, composed of officers with no independence from the colonial government, delivered a predetermined verdict of guilty.</p>
+    <p class="reveal">Rizal faced death with extraordinary composure. On the night before his execution, he composed "Mi Último Adiós," a 14-stanza farewell poem of breathtaking beauty, hidden in his shoes and later in an alcohol lamp before being passed to his family. He refused a blindfold, chose to face his executioners, and fell facing the rising Philippine sun — a final, deliberate symbolic act. His execution transformed him instantly from a colonial prisoner into an immortal martyr.</p>
+  </div>
+</section>
+
+<!-- V. CHARACTER ANALYSIS -->
+<section id="character">
+  <div class="container">
+    <span class="section-label reveal">V &mdash; Character Analysis</span>
+    <h2 class="section-title reveal">Virtues, Weaknesses &amp; <em>Evolution</em></h2>
+    <div class="divider reveal"></div>
+
+    <div class="two-col">
+      <div>
+        <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green-heritage);margin-bottom:1rem;font-weight:600;">A. Virtues &amp; Strengths</h3>
+        <ul class="virtue-list reveal">
+          <li>Intellectual brilliance — mastery of 11 languages, multiple sciences, art, medicine, and literature</li>
+          <li>Moral courage — fearless condemnation of colonial injustice through pen and public advocacy despite personal risk</li>
+          <li>Compassion and service — treated the poor without charge; established civic institutions in exile</li>
+          <li>Patriotism — every endeavor, even personal relationships and scientific work, was ultimately in service of the Filipino people</li>
+          <li>Humility and discipline — despite pan-European fame, he lived modestly and worked industriously every day of his life</li>
+          <li>Lifelong learning — he studied new subjects (ophthalmology, geology, botany) continuously throughout his life</li>
+          <li>Nonviolence — steadfastly believed reform through education and dialogue was superior to armed revolution</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--burgundy);margin-bottom:1rem;font-weight:600;">B. Shortcomings &amp; Weaknesses</h3>
+        <ul class="weakness-list reveal">
+          <li>Romantic idealism — his faith in Spanish reform, even when evidence of colonial intransigence was overwhelming, delayed more decisive action</li>
+          <li>Political naivety — he genuinely believed the power of his pen could achieve what only organized mass action ultimately accomplished</li>
+          <li>Ambivalence in revolution — his public opposition to the Katipunan revolt alienated militant nationalists and created historical controversies about his ultimate allegiances</li>
+          <li>Isolation — his cosmopolitan elite education created distance between him and the masses whose liberation he sought</li>
+          <li>Personal relationships — his many romantic attachments (Leonor Rivera, Nelly Boustead, Josephine Bracken) suggest an emotional restlessness and difficulty with commitment</li>
+          <li>Social elitism — his reform vision remained centered on the ilustrado class rather than the landless poor and rural majority</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--burgundy);margin:3rem 0 1.5rem;font-weight:600;">C. Evolution of Character Over Time</h3>
+
+    <div class="reveal">
+      <div class="phase-block">
+        <div class="phase-year-badge">1861–1877</div>
+        <div class="phase-content">
+          <h4>The Prodigy (Childhood &amp; Ateneo)</h4>
+          <p>Gifted, eager, shaped by a loving mother and a faith-rooted Jesuit education. His early character is defined by idealism, religious devotion, and a fierce desire to prove that Filipinos are intellectually equal to any nation.</p>
+        </div>
+      </div>
+      <div class="phase-block">
+        <div class="phase-year-badge">1882–1892</div>
+        <div class="phase-content">
+          <h4>The Reformer (Europe)</h4>
+          <p>Exposure to Enlightenment thought deepens his analysis of colonialism. He shifts from personal ambition to national advocacy. His writing grows sharper, angrier, more sophisticated. He loses his earlier religious certainty but gains a secular humanism grounded in universal rights.</p>
+        </div>
+      </div>
+      <div class="phase-block">
+        <div class="phase-year-badge">1892–1896</div>
+        <div class="phase-content">
+          <h4>The Builder (Dapitan)</h4>
+          <p>In exile, the polemicist becomes a practitioner. He discovers that heroism is not only in grand gestures but in daily acts of healing, teaching, and community building. His character deepens into quiet dignity and patient endurance.</p>
+        </div>
+      </div>
+      <div class="phase-block">
+        <div class="phase-year-badge">Dec. 1896</div>
+        <div class="phase-content">
+          <h4>The Martyr (Final Hours)</h4>
+          <p>Facing unjust execution with serenity, Rizal achieves his final — and greatest — transformation: from a man of ideas into a living symbol. "Mi Último Adiós" reveals a soul at complete peace with sacrifice, his love for country transcending fear of death.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VI. PITFALLS AND HEROISM -->
+<section id="heroism">
+  <div class="container">
+    <span class="section-label reveal">VI &mdash; Pitfalls &amp; Heroism</span>
+    <h2 class="section-title reveal">Obstacles That Forged <em>a Legend</em></h2>
+    <div class="divider reveal"></div>
+
+    <p class="reveal">Heroism is not the absence of adversity — it is the character revealed under its weight. Rizal's life was beset by challenges that would have broken lesser spirits: colonial censorship, exile, the imprisonment of his family, unfounded criminal charges, romantic heartbreak, and the creeping knowledge that his moderate path might be overtaken by the very revolution he feared.</p>
+
+    <div class="cards-grid reveal">
+      <div class="info-card">
+        <h3>Censorship &amp; Exile</h3>
+        <p>Both Noli and Fili were banned in the Philippines under pain of imprisonment. Rizal's family was persecuted, his farm seized, his mother imprisoned. Yet he continued to write, finding ways to smuggle his ideas past colonial censors.</p>
+      </div>
+      <div class="info-card">
+        <h3>Intellectual Isolation</h3>
+        <p>Too radical for Spanish authorities, too moderate for armed revolutionaries, Rizal was uniquely alone in his political position. He endured this isolation with grace, committed to his convictions regardless of factional approval.</p>
+      </div>
+      <div class="info-card">
+        <h3>Personal Sacrifice</h3>
+        <p>His greatest love, Leonor Rivera, eventually married another while he was in Europe — a heartbreak he bore in silence. His relationship with Josephine Bracken was denied a Church blessing. He sacrificed family life for his national mission.</p>
+      </div>
+      <div class="info-card">
+        <h3>The Injustice of His Death</h3>
+        <p>Executed for a revolution he opposed, on evidence that was fabricated and in a trial that violated every principle of judicial fairness, Rizal's death was the supreme injustice that became the supreme inspiration — uniting Filipinos as no act of war could have.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal">
+      <p>Rizal's heroism lies not in the absence of fear, failure, or tragedy — but in his refusal to let any of these define his ultimate purpose. Each obstacle became fuel; each injustice became a page of his testimony to the world.</p>
+    </div>
+
+    <p class="reveal">His novels, his scientific work, his community building in exile, and finally his composed acceptance of death — all were heroic acts shaped by the specific challenges of his time and place. The Spanish colonial regime inadvertently created the very martyr-symbol it feared most by executing the man who had consistently urged peaceful change.</p>
+
+    <p class="reveal">In this sense, Rizal's heroism is not simply biographical but structural: his life reveals how systems of oppression can transform their most eloquent critics into immortal symbols when they choose violence over justice. His death made him indestructible in a way that his life, however brilliant, could never quite achieve alone.</p>
+  </div>
+</section>
+
+<!-- VII. CONCLUSION -->
+<section id="conclusion" style="background:#4A1219;padding:5rem 0;">
+  <div class="container" style="text-align:center;">
+    <span style="display:block;font-family:'Crimson Pro',serif;font-size:0.8rem;letter-spacing:0.4em;text-transform:uppercase;color:#B8933E;margin-bottom:1rem;">VII &mdash; Conclusion</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#F5EDD8;line-height:1.2;margin-bottom:2rem;">A Legacy <em style="font-style:italic;color:#B8933E;">Without End</em></h2>
+    <div style="width:60px;height:2px;background:#B8933E;margin:0 auto 2.5rem;"></div>
+    <p style="font-family:'Lora',serif;font-size:1rem;line-height:1.8;color:#EDE0C4;max-width:680px;margin:0 auto 1.4rem;">José Rizal was shaped by a rare convergence: the inherited gifts of an exceptional mind, the nurturing love of a literary mother, the discipline of Jesuit education, the liberating exposure to European Enlightenment thought, and the searing injustice of colonial rule. These forces — biological and environmental together — did not create a perfect man, but they forged an extraordinary one.</p>
+    <p style="font-family:'Lora',serif;font-size:1rem;line-height:1.8;color:#EDE0C4;max-width:680px;margin:0 auto 1.4rem;">His weaknesses — the romantic idealism, the faith in Spanish reform, the distance between his ilustrado worldview and the rural poor — are as instructive as his virtues. They remind us that heroes are not mythological abstractions but complex human beings who achieve greatness not despite their limitations but through their response to them.</p>
+    <p style="font-family:'Lora',serif;font-size:1rem;line-height:1.8;color:#EDE0C4;max-width:680px;margin:0 auto 1.4rem;">More than a century after his death, Rizal's legacy endures not merely in national holidays and textbooks, but in a deeper cultural inheritance: the belief that a people's dignity must be articulated, not merely assumed; that education is the foundation of all genuine freedom; and that one person who dares to speak truth to power can alter the course of history.</p>
+    <div style="text-align:left;margin:2.5rem auto 0;max-width:680px;border-left:3px solid #B8933E;padding:1.5rem 2rem;background:rgba(255,255,255,0.06);">
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;line-height:1.7;color:#F5EDD8;margin:0 0 0.75rem;">"I wish to show to those who deny us patriotism that we know how to die for our duty and our convictions."</p>
+      <cite style="display:block;font-family:'Crimson Pro',serif;font-style:normal;font-size:0.85rem;letter-spacing:0.1em;color:#B8933E;">— José Rizal, the night before his execution</cite>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section class="references-section">
+  <div class="container">
+    <span class="section-label">References</span>
+    <h2 class="section-title">Sources &amp; <em>Bibliography</em></h2>
+    <div class="divider"></div>
+    <ul class="ref-list">
+      <li>Guerrero, L. M. (1963). <em>The First Filipino: A Biography of José Rizal.</em> Manila: National Heroes Commission.</li>
+      <li>Zaide, G. F., &amp; Zaide, S. M. (1999). <em>José Rizal: Life, Works and Writings of a Genius, Writer, Scientist, and National Hero.</em> Manila: All-Nations Publishing.</li>
+      <li>Rizal, J. (1887). <em>Noli Me Tángere.</em> Berlin: Berliner Buchdruckerei-Aktien-Gesellschaft.</li>
+      <li>Rizal, J. (1891). <em>El Filibusterismo.</em> Ghent: F. Meyer-Van Loo Press.</li>
+      <li>Schumacher, J. N. (1997). <em>The Propaganda Movement, 1880–1895.</em> Quezon City: Ateneo de Manila University Press.</li>
+      <li>Agoncillo, T. A. (1990). <em>History of the Filipino People</em> (8th ed.). Quezon City: Garotech Publishing.</li>
+      <li>National Historical Commission of the Philippines. (2021). <em>José Rizal: National Hero.</em> Retrieved from https://nhcp.gov.ph</li>
+      <li>Joaquin, N. (1977). <em>A Question of Heroes.</em> Manila: Ayala Museum.</li>
+      <li>Craig, A. (1913). <em>Rizal's Life and Minor Writings.</em> Manila: Philippine Education Company.</li>
+      <li>Bonoan, R. J. (1994). <em>The Rizal-Pastells Correspondence.</em> Quezon City: Ateneo de Manila University Press.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Digital Timeline: The Shaping of a Hero — José Rizal &nbsp;|&nbsp; An educational resource &nbsp;|&nbsp; All content derived from reputable historical sources</p>
+</footer>
+
+<script>
+// NAV TOGGLE
+document.getElementById('navToggle').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Close nav on link click (mobile)
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// SCROLL REVEAL
+var reveals = document.querySelectorAll('.reveal');
+var timelineItems = document.querySelectorAll('.timeline-item');
+
+function checkReveal() {
+  var viewH = window.innerHeight;
+  reveals.forEach(function(el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < viewH - 60) el.classList.add('visible');
+  });
+  timelineItems.forEach(function(el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < viewH - 40 && !el.classList.contains('hidden')) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkReveal, { passive: true });
+checkReveal();
+
+// TIMELINE EXPAND/COLLAPSE
+function toggleDesc(card) {
+  var desc = card.querySelector('.timeline-desc');
+  desc.classList.toggle('expanded');
+}
+
+// TIMELINE FILTER
+document.querySelectorAll('.tfilter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tfilter-btn').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    var filter = this.getAttribute('data-filter');
+    timelineItems.forEach(function(item) {
+      var cat = item.getAttribute('data-cat');
+      if (filter === 'all' || cat === filter) {
+        item.classList.remove('hidden');
+        setTimeout(function() { item.classList.add('visible'); }, 50);
+      } else {
+        item.classList.add('hidden');
+        item.classList.remove('visible');
+      }
+    });
+  });
+});
+
+// ACTIVE NAV HIGHLIGHT ON SCROLL
+var sections = document.querySelectorAll('section[id]');
+var navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', function() {
+  var scrollY = window.scrollY + 120;
+  sections.forEach(function(sec) {
+    if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
+      var id = sec.getAttribute('id');
+      navLinks.forEach(function(link) {
+        link.style.opacity = link.getAttribute('href') === '#' + id ? '1' : '0.75';
+        link.style.color = link.getAttribute('href') === '#' + id ? 'var(--gold)' : 'var(--parchment)';
+      });
+    }
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
